@@ -1,5 +1,5 @@
 'use strict';
-const handleError = require('handleError');
+const handleError = require('./modules/error');
 
 // Load Environment Variables from the .env file
 require('dotenv').config();
@@ -28,7 +28,13 @@ app.get('/', (req, res) => {
     res.send('Go away please.');
 });
 
-
+app.get('/views/pages/submission', (req,res) => {
+  res.render('submission', )
+});
+app.get('/views/pages/stories', (req,res) => {
+  res.render('stories', )
+});
+app.post('/views/pages/submission', submitStory);
 
 //functions
 //book function
