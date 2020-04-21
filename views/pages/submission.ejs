@@ -14,11 +14,25 @@
 
   </header>
 
- 
-
-
   <main id="main-content">
-    
+    <form action="/views/pages/submission" method="POST">
+      <legend>
+        <label for="user">Enter your name/alias</label>
+        <input type="text" name="user" placeholder="your superhero name goes here" />
+        <label for="location">Where is your non-virtual neighborhood?</label>
+        <input type="text" name="location" placeholder="your superhero name goes here" />
+        <label for="story">Tell us your Story!</label>
+        <textarea name="story" id="storyTextBox" cols="30" rows="10" placeholder="make it pretty"></textarea>
+        <label for="category">Enter a(n)..</label>
+        <select name="category" id="categoryDropdown">
+          <option value="activity">Activity Idea</option>
+          <option value="funny">Funny Story</option>
+          <option value="inspirational">Inspirational Story</option>
+          <option value="random">Random</option>
+        </select>
+        <button type="submit">Add Your Adventure!</button>
+      </legend>
+    </form>
   </main>
 
   <footer id="footer">

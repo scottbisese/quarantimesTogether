@@ -4,7 +4,7 @@
 <head>
 
   <%- include('../layout/head') %>
-  
+
 </head>
 
 <body>
@@ -14,11 +14,18 @@
 
   </header>
 
- 
+
 
 
   <main id="main-content">
-    
+    <% book.forEach(story => { %>
+    <section class="stories">
+      <p><%= book.user %></p>
+      <p><%= book.location %></p>
+      <p><%= book.category %></p>
+      <p><%= book.story %></p>
+    </section>
+    <% )} %>
   </main>
 
   <footer id="footer">
