@@ -25,6 +25,16 @@ app.get('/', (request, response) => {
     response.send('Home Page!');
 });
 
+//functions
+//book function
+function Stories(story){
+    this.id = story.id ? story.id : 'no id available';
+    this.user = story.user ? story.user : 'no user available';
+    this.location = story.location ? story.location : 'no location available';
+    this.story = story.story ? story.story : 'no story available';
+    this.category = story.category ? story.category : 'no category available';
+  }
+
 function showHomepage(req,res) {
     client.query('SELECT * FROM stories;').then(stories => {
       res.render('pages/homepage',{stories:stories.rows});
