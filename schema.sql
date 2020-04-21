@@ -5,4 +5,5 @@ CREATE TABLE IF NOT EXISTS stories (
   user VARCHAR(255),
   location VARCHAR(255),
   story TEXT,
+  category VARCHAR(255),
 );
