@@ -16,25 +16,29 @@ client.connect();
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors()); //middleware
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 //view engine/templating
 app.set('view engine', 'ejs');
-app.use(express.static('./public'));
+// app.use(express.static('./public'));
 app.use(express.urlencoded({extended:true}));
+
+//oh yah loading bars eh?? definitely doing eh?? are you in broh?
 
 //routes
 app.get('/', (req, res) => {
     res.send('Go away please.');
 });
 
-app.get('/views/pages/submission', (req,res) => {
-  res.render('submission', )
+app.get('/pages/submission', (req,res) => {
+  res.render('pages/submission', submitStory())
 });
-app.get('/views/pages/stories', (req,res) => {
-  res.render('stories', )
+
+app.get('/pages/stories', (req,res) => {
+  showStories(req,res);
 });
-app.post('/views/pages/submission', submitStory);
+
+// app.post('//pages/submission', submitStory());
 
 //functions
 //book function
@@ -45,9 +49,10 @@ function Stories(story){
     this.category = story.category ? story.category : 'no category available';
   }
 
-function showHomepage(req,res) {
+function showStories(req,res) {
     client.query('SELECT * FROM stories;').then(stories => {
-      res.render('views/pages/stories',{stories:stories.rows});
+      console.log(JSON.stringify(stories, null, 2));
+      res.render('./pages/stories',{stories:stories.rows});
     }).catch(getErrorHandler(res));
   }
 
@@ -60,7 +65,7 @@ function submitStory(req,res){
         const sql = 'SELECT * FROM stories WHERE id=$1';
         client.query(sql, [sqlResponse.rows[0].id]).then((sqlResponse)=> {
           console.log(sqlResponse);
-          res.render('views/pages/stories', {book: sqlResponse.rows[0] });
+          res.render('pages/stories', {story: sqlResponse.rows[0] });
         }).catch(getErrorHandler(res));
       }).catch(getErrorHandler(res));
     } catch (error) {
@@ -70,7 +75,7 @@ function submitStory(req,res){
 
 function renderStory (req,res) {
     req.body.id = req.params.id;
-    res.render('views/pages/stories', {story:req.body});
+    res.render('pages/stories', {stories:req});
 }
   
   function getErrorHandler(res,status = 500) {

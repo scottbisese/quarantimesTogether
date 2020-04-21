@@ -19,14 +19,14 @@
 
 
   <main id="main-content">
-    <% book.forEach(story => { %>
+    <% stories.forEach(story => { %>
     <section class="stories">
-      <p><%= book.name %></p>
-      <p><%= book.location %></p>
-      <p><%= book.category %></p>
-      <p><%= book.story %></p>
+      <p><%= story.name %></p>
+      <p><%= story.location %></p>
+      <p><%= story.category %></p>
+      <p><%= story.story %></p>
     </section>
-    <% )} %>
+    <% }) %>
   </main>
 
   <footer id="footer">
