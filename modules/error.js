@@ -1,10 +1,11 @@
 'use strict';
 
-function handleError (err, request, response) {
+function handleError (response, err, status ) {
     let viewModel = {
         error: err,
     };
-    response.status(500).render('/pages/error-view', viewModel);
+    console.error(err);
+    response.status(status).render('pages/error-view', viewModel);
 }
 
 module.exports = handleError;
