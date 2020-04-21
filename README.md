@@ -6,11 +6,11 @@ Project: Quarantimes together was spawned in the time of quaratine while the int
 
 # Wireframes
 
-[Wireframe Main page](images/mainwireframe.png)  
-[Wireframe Submission page](images/SubmissionWireframe.png)  
-[Wireframe Stories page](images/StoriesWireframe.png)  
-[Wireframe data page](images/DataWireframe.png)  
-[Wireframe About us page](images/AboutUsWireframe.png)  
+[Wireframe Main page](public/images/mainwireframe.png)  
+[Wireframe Submission page](public/images/SubmissionWireframe.png)  
+[Wireframe Stories page](public/images/StoriesWireframe.png)  
+[Wireframe data page](public/images/DataWireframe.png)  
+[Wireframe About us page](public/images/AboutUsWireframe.png)  
 
 # Project Board
 
@@ -19,12 +19,12 @@ Project: Quarantimes together was spawned in the time of quaratine while the int
 
 # Domain Modeling
 
-[Domain Model](images/DomainModel.png)
+[Domain Model](public/images/DomainModel.png)
 
 
 # Database Entity-Relationship-Diagram
 
-[Database Entity-Relationship-Diagram](DatabaseEntity-Relationship-Diagram.png)
+[Database Entity-Relationship-Diagram](public/images/DatabaseEntity-Relationship-Diagram.png)
 
 
 
