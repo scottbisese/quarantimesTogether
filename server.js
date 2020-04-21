@@ -19,16 +19,19 @@ app.use(express.static('public'));
 
 //view engine/templating
 app.set('view engine', 'ejs');
+app.use(express.static('./public'));
+app.use(express.urlencoded({extended:true}));
 
 //routes
-app.get('/', (request, response) => {
-    response.send('Home Page!');
+app.get('/', (req, res) => {
+    res.send('Go away please.');
 });
+
+
 
 //functions
 //book function
 function Stories(story){
-    this.id = story.id ? story.id : 'no id available';
     this.user = story.user ? story.user : 'no user available';
     this.location = story.location ? story.location : 'no location available';
     this.story = story.story ? story.story : 'no story available';
@@ -37,10 +40,41 @@ function Stories(story){
 
 function showHomepage(req,res) {
     client.query('SELECT * FROM stories;').then(stories => {
-      res.render('pages/homepage',{stories:stories.rows});
+      res.render('views/pages/stories',{stories:stories.rows});
     }).catch(getErrorHandler(res));
   }
 
+  //submit the story
+function submitStory(req,res){
+    try {
+      const sql = 'INSERT INTO stories (user,location,story,category) VALUES($1, $2, $3, $4) RETURNING id;';
+      const values = [req.body.user, req.body.location, req.body.story, req.body.category];
+      client.query(sql,values).then((sqlResponse)=>{
+        const sql = 'SELECT * FROM stories WHERE id=$1';
+        client.query(sql, [sqlResponse.rows[0].id]).then((sqlResponse)=> {
+          console.log(sqlResponse);
+          res.render('views/pages/stories', {book: sqlResponse.rows[0] });
+        }).catch(getErrorHandler(res));
+      }).catch(getErrorHandler(res));
+    } catch (error) {
+      handleError(res,error);
+    }
+  }
+
+function renderStory (req,res) {
+    req.body.id = req.params.id;
+    res.render('views/pages/stories', {story:req.body});
+}
+
+//some good ole' fashioned error handling fer da boys, of course, we won't get errors.. right?
+function handleError(res, err, status = 500) {
+    res.render('pages/error',{status:status, err: err.message});
+  }
+  
+  function getErrorHandler(res,status = 500) {
+    return (error) => handleError(res,error,status);
+  }
+  
 
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
