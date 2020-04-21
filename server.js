@@ -28,7 +28,15 @@ app.get('/', (req, res) => {
     res.send('Go away please.');
 });
 
+app.get('/views/pages/submission', (req,res) => {
+    res.render('submission', )
+});
 
+app.get('/views/pages/stories', (req,res) => {
+    res.render('stories', )
+});
+
+app.post('/views/pages/submission', submitStory);
 
 //functions
 //book function
