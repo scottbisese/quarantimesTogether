@@ -39,7 +39,7 @@ app.post('/views/pages/submission', submitStory);
 //functions
 //book function
 function Stories(story){
-    this.user = story.user ? story.user : 'no user available';
+    this.name = story.name ? story.name : 'no name available';
     this.location = story.location ? story.location : 'no location available';
     this.story = story.story ? story.story : 'no story available';
     this.category = story.category ? story.category : 'no category available';
@@ -54,8 +54,8 @@ function showHomepage(req,res) {
   //submit the story
 function submitStory(req,res){
     try {
-      const sql = 'INSERT INTO stories (user,location,story,category) VALUES($1, $2, $3, $4) RETURNING id;';
-      const values = [req.body.user, req.body.location, req.body.story, req.body.category];
+      const sql = 'INSERT INTO stories (name,location,story,category) VALUES($1, $2, $3, $4) RETURNING id;';
+      const values = [req.body.name, req.body.location, req.body.story, req.body.category];
       client.query(sql,values).then((sqlResponse)=>{
         const sql = 'SELECT * FROM stories WHERE id=$1';
         client.query(sql, [sqlResponse.rows[0].id]).then((sqlResponse)=> {
