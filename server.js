@@ -51,8 +51,7 @@ function Stories(story){
 
 function showStories(req,res) {
     client.query('SELECT * FROM stories;').then(stories => {
-      console.log(JSON.stringify(stories, null, 2));
-      res.render('./pages/stories',{stories:stories.rows});
+      res.render('./pages/stories',{stories:stories.rows || []});
     }).catch(getErrorHandler(res));
   }
 
