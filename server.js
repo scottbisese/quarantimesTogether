@@ -1,4 +1,5 @@
 'use strict';
+const handleError = require('handleError');
 
 // Load Environment Variables from the .env file
 require('dotenv').config();
@@ -65,11 +66,6 @@ function renderStory (req,res) {
     req.body.id = req.params.id;
     res.render('views/pages/stories', {story:req.body});
 }
-
-//some good ole' fashioned error handling fer da boys, of course, we won't get errors.. right?
-function handleError(res, err, status = 500) {
-    res.render('pages/error',{status:status, err: err.message});
-  }
   
   function getErrorHandler(res,status = 500) {
     return (error) => handleError(res,error,status);
