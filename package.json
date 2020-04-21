@@ -2,9 +2,10 @@
   "name": "lab",
   "version": "1.0.0",
   "description": "[Node JS Docs](https://nodejs.org/en/)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ."
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,11 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jest": "^25.2.7"
+    "jest": "^25.2.7",
+    "pg": "^8.0.2",
+    "superagent": "^5.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
