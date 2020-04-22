@@ -30,16 +30,12 @@ app.get('/', (req, res) => {
     res.render('pages/index');
 });
 app.get('/views/pages/submission', (req,res) => {
-  res.render('submission', )
+  res.render('pages/submission', )
 });
 app.get('/views/pages/stories', (req,res) => {
   showStories(req,res);
 });
 app.post('/views/pages/submission', submitStory);
-
-//functions
-//book function
-
 
 
   //submit the story
