@@ -16,56 +16,51 @@ client.connect();
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors()); //middleware
-app.use(express.static('./public'));
+app.use(express.static('public'));
 
 //view engine/templating
 app.set('view engine', 'ejs');
-// app.use(express.static('./public'));
+app.use(express.static('./public'));
 app.use(express.urlencoded({extended:true}));
-
-//oh yah loading bars eh?? definitely doing eh?? are you in broh?
 
 //routes
 app.get('/', (req, res) => {
-    res.send('Go away please.');
+    res.render('pages/index');
 });
 
-app.get('/pages/submission', (req,res) => {
-  res.render('pages/submission', submitStory())
+app.get('/views/pages/submission', (req,res) => {
+  res.render('submission', )
 });
-
-app.get('/pages/stories', (req,res) => {
-  showStories(req,res);
+app.get('/views/pages/stories', (req,res) => {
+  showHomepage(req,res);
 });
-
-// app.post('//pages/submission', submitStory());
+app.post('/views/pages/submission', submitStory);
 
 //functions
 //book function
 function Stories(story){
-    this.name = story.name ? story.name : 'no name available';
+    this.user = story.user ? story.user : 'no user available';
     this.location = story.location ? story.location : 'no location available';
     this.story = story.story ? story.story : 'no story available';
     this.category = story.category ? story.category : 'no category available';
   }
 
-function showStories(req,res) {
+function showHomepage(req,res) {
     client.query('SELECT * FROM stories;').then(stories => {
-      console.log(JSON.stringify(stories, null, 2));
-      res.render('./pages/stories',{stories:stories.rows});
+      res.render('pages/stories',{stories:stories.rows});
     }).catch(getErrorHandler(res));
   }
 
   //submit the story
 function submitStory(req,res){
     try {
-      const sql = 'INSERT INTO stories (name,location,story,category) VALUES($1, $2, $3, $4) RETURNING id;';
-      const values = [req.body.name, req.body.location, req.body.story, req.body.category];
+      const sql = 'INSERT INTO stories (user,location,story,category) VALUES($1, $2, $3, $4) RETURNING id;';
+      const values = [req.body.user, req.body.location, req.body.story, req.body.category];
       client.query(sql,values).then((sqlResponse)=>{
         const sql = 'SELECT * FROM stories WHERE id=$1';
         client.query(sql, [sqlResponse.rows[0].id]).then((sqlResponse)=> {
           console.log(sqlResponse);
-          res.render('pages/stories', {story: sqlResponse.rows[0] });
+          res.render('views/pages/stories', {book: sqlResponse.rows[0] });
         }).catch(getErrorHandler(res));
       }).catch(getErrorHandler(res));
     } catch (error) {
@@ -75,7 +70,7 @@ function submitStory(req,res){
 
 function renderStory (req,res) {
     req.body.id = req.params.id;
-    res.render('pages/stories', {stories:req});
+    res.render('views/pages/stories', {story:req.body});
 }
   
   function getErrorHandler(res,status = 500) {
