@@ -10,7 +10,7 @@ header {
 }
 
 a:link, a:visited {
-    background-color: darkgrey;
+    /* background-color: darkgrey; */
     color: white;
     padding: 14px 25px;
     text-align: center;
@@ -22,3 +22,4 @@ a:link, a:visited {
 a:hover, a:active {
     background-color: rgb(233, 182, 16);
   }
+
