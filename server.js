@@ -10,6 +10,7 @@ const cors = require('cors');
 const superagent = require('superagent');
 const handleError = require('./modules/error');
 const showStories = require('./modules/stories');
+// const submitStory = require('./modules/submit');
 const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL);
 client.connect();
@@ -39,13 +40,12 @@ app.get('/views/pages/stories', (req, res) => {
 app.post('/views/pages/submission', submitStory);
 
 
-//submit the story
+// submit the story
 function submitStory(req, res) {
   const sql = 'INSERT INTO stories (name,location,story,category) VALUES($1, $2, $3, $4) RETURNING id;';
   const values = [req.body.name, req.body.location, req.body.story, req.body.category];
   client.query(sql, values).then((sqlResponse) => {
     res.redirect('stories');
-    // })
   }).catch(err =>
     handleError(err, req, res));
 }
