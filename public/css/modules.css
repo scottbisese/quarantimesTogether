@@ -41,6 +41,10 @@ label {
     font-family: cursive;
 }
 
+input.input-box, textarea { 
+    background: lightgrey;
+}
+
 #submit {
     display: block;
     color:  rgb(62, 11, 202);
@@ -48,9 +52,7 @@ label {
     background-color: burlywood;
 }
 
-input.input-box, textarea { 
-    background: lightgrey;
-}
+
 
 /* mobile layout */
 @media(min-width: 600px) {
