@@ -1,5 +1,5 @@
 'use strict';
-const handleError = require('./modules/error');
+
 
 // Load Environment Variables from the .env file
 require('dotenv').config();
@@ -8,6 +8,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const superagent = require('superagent');
+const handleError = require('./modules/error');
+const showStories = require('./modules/stories');
 const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL);
 client.connect();
@@ -27,12 +29,11 @@ app.use(express.urlencoded({extended:true}));
 app.get('/', (req, res) => {
     res.render('pages/index');
 });
-
 app.get('/views/pages/submission', (req,res) => {
   res.render('submission', )
 });
 app.get('/views/pages/stories', (req,res) => {
-  showHomepage(req,res);
+  showStories(req,res);
 });
 app.post('/views/pages/submission', submitStory);
 
@@ -40,11 +41,6 @@ app.post('/views/pages/submission', submitStory);
 //book function
 
 
-function showHomepage(req,res) {
-    client.query('SELECT * FROM stories;').then(stories => {
-      res.render('pages/stories',{stories:stories.rows});
-    }).catch(getErrorHandler(res));
-  }
 
   //submit the story
 function submitStory(req,res){
