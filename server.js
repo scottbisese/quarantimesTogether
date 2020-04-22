@@ -3,6 +3,8 @@
 
 // Load Environment Variables from the .env file
 require('dotenv').config();
+let $ = require('jQuery');
+
 
 // Application Dependencies
 const express = require('express');
@@ -37,6 +39,12 @@ app.get('/views/pages/submission', (req, res) => {
 app.get('/views/pages/stories', (req, res) => {
   showStories(req, res);
 });
+app.get('/views/pages/aboutUs', (req, res) => {
+    res.render('pages/aboutUs');
+  });
+app.get('/views/pages/searches', (req, res) => {
+    res.render('pages/search');
+  });
 app.post('/views/pages/submission', submitStory);
 
 

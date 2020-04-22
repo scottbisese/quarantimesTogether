@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <html lang="en-us">
 
 <head>
@@ -19,14 +21,40 @@
 
 
   <main id="main-content">
+    <select name="category" id="categoryDropdown">
+      <option value="activity">Activity Idea</option>
+      <option value="funny">Funny Story</option>
+      <option value="inspirational">Inspirational Story</option>
+      <option value="random">Random</option>
+    </select>
+
+
     <% stories.forEach(story => { %>
-    <section class="stories">
+    <section class="<%= story.category %>">
+     
       <p><%= story.name %></p>
       <p><%= story.location %></p>
       <p><%= story.category %></p>
       <p><%= story.story %></p>
     </section>
     <% }) %>
+<script>
+  //event listener
+$('select').change(hideElement);
+let $section = $('<section>').attr('data-keyword', story.category);
+
+//hidey filter gafiltafish
+ function hideElement() { 
+ let value = $(this).val(); 
+ console.log(value);
+  {  
+   $('section').hide();    
+   $(`section.${value}`).slideDown(888); 
+   }                                       
+}
+
+</script>
+
   </main>
 
   <footer id="footer">
@@ -35,5 +63,6 @@
 
   </footer>
 </body>
+
 
 </html>
