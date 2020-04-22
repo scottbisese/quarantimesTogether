@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header {
+    height: 0;
+    margin-bottom: 1rem;
+}
+
+main {
+    width: 95%;
+    margin: 0 auto;
+}
