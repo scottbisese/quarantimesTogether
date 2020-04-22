@@ -19,6 +19,12 @@
 
 
   <main id="main-content">
+    <select name="category" id="categoryDropdown">
+      <option value="activity">Activity Idea</option>
+      <option value="funny">Funny Story</option>
+      <option value="inspirational">Inspirational Story</option>
+      <option value="random">Random</option>
+    </select>
     <% stories.forEach(story => { %>
     <section class="stories" class="<%= story.category %>">
      

@@ -3,6 +3,8 @@
 
 // Load Environment Variables from the .env file
 require('dotenv').config();
+let $ = require('jquery');
+
 
 // Application Dependencies
 const express = require('express');
@@ -40,13 +42,6 @@ app.get('/views/pages/stories', (req, res) => {
 app.post('/views/pages/submission', submitStory);
 
 
-<<<<<<< HEAD
-function showStories(req,res) {
-    client.query('SELECT * FROM stories;').then(stories => {
-      res.render('./pages/stories',{stories:stories.rows || []});
-    }).catch(getErrorHandler(res));
-  }
-=======
 // submit the story
 function submitStory(req, res) {
   const sql = 'INSERT INTO stories (name,location,story,category) VALUES($1, $2, $3, $4) RETURNING id;';
@@ -56,7 +51,6 @@ function submitStory(req, res) {
   }).catch(err =>
     handleError(err, req, res));
 }
->>>>>>> bb06fb946d269c1aab8b2caff4a990ce8b944941
 
 function getQuote(req, res) {
   const url = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en ';
