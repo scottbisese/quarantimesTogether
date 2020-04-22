@@ -42,7 +42,7 @@ app.get('/views/pages/stories', (req, res) => {
 app.get('/views/pages/aboutUs', (req, res) => {
     res.render('pages/aboutUs');
   });
-app.get('/views/pages/searches', (req, res) => {
+app.get('/views/pages/search', (req, res) => {
     res.render('pages/search');
   });
 app.post('/views/pages/submission', submitStory);
