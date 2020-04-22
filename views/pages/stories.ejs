@@ -20,13 +20,25 @@
 
   <main id="main-content">
     <% stories.forEach(story => { %>
-    <section class="stories">
+    <section class="stories" class="<%= story.category %>">
+     
       <p><%= story.name %></p>
       <p><%= story.location %></p>
       <p><%= story.category %></p>
       <p><%= story.story %></p>
     </section>
     <% }) %>
+
+<% function hideElement() { %>
+<% let value = $(this).val(); %>
+<%  if(value !== 'default'){  %>
+<%   $('section').hide();    %>
+<%  $(`section[data-keyword=${value}]`).slideDown(888); %>
+<%   } else {                                             %>
+<%    $('section').fadeIn(750);                         %>
+<%  }                                               %>
+<%  }                                         %>
+
   </main>
 
   <footer id="footer">
@@ -36,4 +48,5 @@
   </footer>
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>
