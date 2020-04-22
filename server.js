@@ -40,20 +40,19 @@ app.post('/views/pages/submission', submitStory);
 
   //submit the story
 function submitStory(req,res){
-    try {
-      const sql = 'INSERT INTO stories (user,location,story,category) VALUES($1, $2, $3, $4) RETURNING id;';
-      const values = [req.body.user, req.body.location, req.body.story, req.body.category];
+      const sql = 'INSERT INTO stories (name,location,story,category) VALUES($1, $2, $3, $4) RETURNING id;';
+      const values = [req.body.name, req.body.location, req.body.story, req.body.category];
       client.query(sql,values).then((sqlResponse)=>{
-        const sql = 'SELECT * FROM stories WHERE id=$1';
-        client.query(sql, [sqlResponse.rows[0].id]).then((sqlResponse)=> {
-          console.log(sqlResponse);
-          res.render('views/pages/stories', {book: sqlResponse.rows[0] });
-        }).catch(getErrorHandler(res));
-      }).catch(getErrorHandler(res));
-    } catch (error) {
-      handleError(res,error);
+        // const sql = 'SELECT * FROM stories';
+        // client.query(sql).then((sqlResponse)=> {
+        //   console.log(sqlResponse);
+          // res.redirect('pages/stories', {stories: sqlResponse});
+          res.redirect('stories');
+        // })
+      }).catch(err =>
+        handleError(err, req, res));
     }
-  }
+  
   
   function getErrorHandler(res,status = 500) {
     return (error) => handleError(res,error,status);
