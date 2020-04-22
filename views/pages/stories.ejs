@@ -46,12 +46,11 @@ let $section = $('<section>').attr('data-keyword', story.category);
 //hidey filter gafiltafish
  function hideElement() { 
  let value = $(this).val(); 
-  if(value !== 'default'){  
+ console.log(value);
+  {  
    $('section').hide();    
-   $(`section[data-keyword=${value}]`).slideDown(888); 
-   } else {                                             
-    $('section').fadeIn(750);                         
-  }                                               
+   $(`section.${value}`).slideDown(888); 
+   }                                       
 }
 
 </script>
