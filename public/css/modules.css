@@ -1,5 +1,8 @@
+
+
+
 /* mobile layout */
-@media(min-width: 320px) {
+@media(min-width: 600px) {
     body {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px 1fr));
@@ -7,24 +10,16 @@
         grid-gap: 1rem;
     }
 
-    footer {
-        margin: 0 auto;
+    #main-content {
         grid-column: 1 / 4;
-        grid-row: 4 / 6;
+        
     }
-
 }
 
 
 
-/*tablet layout*/
+/*desktop layout*/
 @media(min-width: 768px) {
     body {
         background: dodgerblue;
     }}
-
-/*laptop layout*/
-@media only screen and (min-width: 960px) {
-    body {
-        background: limegreen;
-    }} 
