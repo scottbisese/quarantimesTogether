@@ -38,12 +38,7 @@ app.post('/views/pages/submission', submitStory);
 
 //functions
 //book function
-function Stories(story){
-    this.user = story.user ? story.user : 'no user available';
-    this.location = story.location ? story.location : 'no location available';
-    this.story = story.story ? story.story : 'no story available';
-    this.category = story.category ? story.category : 'no category available';
-  }
+
 
 function showHomepage(req,res) {
     client.query('SELECT * FROM stories;').then(stories => {
@@ -67,11 +62,6 @@ function submitStory(req,res){
       handleError(res,error);
     }
   }
-
-function renderStory (req,res) {
-    req.body.id = req.params.id;
-    res.render('views/pages/stories', {story:req.body});
-}
   
   function getErrorHandler(res,status = 500) {
     return (error) => handleError(res,error,status);
