@@ -1,0 +1,17 @@
+/* mobile layout */
+@media only screen and (min-width: 320px) {
+    body {
+        background: orange;
+    }}
+
+/*tablet layout*/
+@media only screen and (min-width: 768px) {
+    body {
+        background: dodgerblue;
+    }}
+
+/*laptop layout*/
+@media only screen and (min-width: 960px) {
+    body {
+        background: limegreen;
+    }}
