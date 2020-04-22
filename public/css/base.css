@@ -6,6 +6,7 @@ html, body {
     min-width: 360px;
     margin: 0 auto;
     text-align: center;
+    height: 100%;
 }
 
 header {
@@ -16,6 +17,5 @@ header {
 
 main {
     width: 95%;
-    margin-top: 8rem;
-
 }
+
