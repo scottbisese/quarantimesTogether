@@ -24,7 +24,7 @@ header {
 header p {
     font-size: 20px;
     border: inset;
-    background-color: grey;
+    background-color: #ededed;
     color: black;
     border-radius: 20px;
     font-family: 'Trochut', cursive;
@@ -46,9 +46,9 @@ a:link, a:visited {
     font-size: x-large;
 }
 
-a:hover, a:active {
+/* a:hover, a:active {
     background-color: rgb(233, 182, 16);
-  }
+  } */
 
 main label {
     font-family: 'Sintony', sans-serif;
@@ -76,6 +76,11 @@ form legend input {
 }
   
 
+h3 img {
+    border-radius: 50%;
+}
+
+
 
 /* -- Hamburger menu -- */
 #menuToggle
@@ -96,12 +101,12 @@ form legend input {
     text-decoration: none;
     color: #232323;
     
-    transition: color 0.3s ease;
+    /* transition: color 0.3s ease; */
   }
   
 #menuToggle a:hover
   {
-    color: tomato;
+    color: green;
   }
   
   
