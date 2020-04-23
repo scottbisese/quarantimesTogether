@@ -1,5 +1,5 @@
 'use strict';
-console.log('app.js is running');
+console.log('chart.js is running');
 const query = $('#query').serialize();
 const ajaxSettings = {
   method: 'get',
