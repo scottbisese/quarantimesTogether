@@ -92,21 +92,12 @@ function getCovidData(req, res) {
       let data = new ConfirmedCases(dayData);
       return data;
     });
-    let json = makeChartJson(dateRange, confirmedNumbers);
-    res.send(json);
-    // res.render('pages/results', { cases: cases });
+    console.log(cases);
+    res.send(cases);
   }).catch(err =>
     handleError(err, req, res));
 }
-let chartData = [];
-function makeChartJson(labels, data) {
-  chartData = [];
-  for (let i = 0; i < labels.length; i++) {
-    chartData.push(`${labels[i]}: ${data[i]}`);
-  }
-  return chartData;
 
-}
 
 let confirmedNumbers = [];
 let dateRange = [];

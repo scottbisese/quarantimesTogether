@@ -9,15 +9,12 @@ const ajaxSettings = {
 console.log('about to AJAX', ajaxSettings);
 $.ajax('/chart.json', ajaxSettings)
   .then(function (data) {
-   let data2 = data.map(entry => {
-     return entry.split(':');
-    });
-    let dataLabels = data2.map(entry => {
-      return entry[0];
+    console.log(data);
+    let dataLabels = data.map(entry => {
+      return entry.label;
     })
-    let dataCases = data2.map(entry => {
-      let answer = parseInt(entry[1]);
-      return answer;
+    let dataCases = data.map(entry => {
+     return entry.data;
     })
     console.log(dataLabels);
     console.log(dataCases);
