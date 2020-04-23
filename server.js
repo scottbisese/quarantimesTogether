@@ -82,25 +82,28 @@ function getCovidData(req, res) {
   console.log(url);
   superagent.get(url).then(covidResponse => {
     // console.log(covidResponse.body);
-    confirmedNumbers =[]
+    confirmedNumbers =[];
+    dateRange = [];
     let cases = covidResponse.body.map(dayData => {
       let data = new ConfirmedCases(dayData);
       return data;
     });
     console.log(confirmedNumbers);
+    console.log(dateRange);
     res.render('pages/results', {cases : cases});
   }).catch(err =>
     handleError(err, req, res));
 }
 
 let confirmedNumbers =[];
-let date
+let dateRange = [];
 function ConfirmedCases(covidData) {
   this.country = covidData.Country;
   this.confirmed = covidData.Confirmed;
   confirmedNumbers.push(parseInt(covidData.Confirmed));
   this.date = new Date(Date.parse(covidData.Date)).toDateString();
-  //new Date(Date.parse('2020-04-03T00:00:00Z')).toDateString() 
+  dateRange.push(new Date(Date.parse(covidData.Date)).toDateString());
+  
 }
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
