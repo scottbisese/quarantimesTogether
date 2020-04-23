@@ -20,4 +20,7 @@ header {
 main {
     width: 95%;
 }
+canvas {
+    background-color: white;
+}
 
