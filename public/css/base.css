@@ -21,4 +21,7 @@ main {
     width: 95%;
     overflow: scroll;
 }
+canvas {
+    background-color: white;
+}
 
