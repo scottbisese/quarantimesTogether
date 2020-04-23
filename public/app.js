@@ -1,4 +1,5 @@
 'use strict';
+
 console.log('app.js is running');
 const query = $('#query').serialize();
 const ajaxSettings = {
@@ -20,27 +21,20 @@ $.ajax('/chart.json', ajaxSettings)
     console.log(dataCases);
     makeChart(dataLabels, dataCases);
   });
-
-function makeChart(dataLabels, dataCases) {
-new Chart(document.getElementById("line-chart"), {
-    type: 'line',
-    data: {
-      labels: dataLabels,
-      datasets: [{ 
-          data: dataCases,
-          label: "Country",
-          borderColor: "#3e95cd",
-          fill: false,
-          backgroundColor: "rgba(0, 0, 0, 1)",
-        }
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'confirmed cases'
-      }
-    }
-  });
-
-}
+  //event listener
+  $('select').change(hideElement);
+//   let $section = $('<section>').attr('data-keyword', story.category);
+  
+  //hidey filter gafiltafish
+   function hideElement() { 
+   let value = $(this).val(); 
+   console.log(value);
+    {  
+     $('section').hide();    
+     $(`section.${value}`).slideDown(888); 
+     }                                       
+  }
+  $('#clearFilter').on('click', ()=>{
+      console.log('filters cleared');
+    $('section').slideDown(888); 
+  })
