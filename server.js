@@ -47,6 +47,9 @@ app.get('/views/pages/search', (req, res) => {
   res.render('pages/search');
 });
 app.get('/views/pages/results', (req, res) => {
+  getResults(req, res);
+})
+app.get('/chart.json', (req, res) => {
   getCovidData(req, res);
 })
 app.post('/views/pages/submission', submitStory);
@@ -72,9 +75,13 @@ function getQuote(req, res) {
     handleError(err, req, res));
 }
 
+function getResults(req, res) {
+  res.render('pages/results', req.query);
+}
+
 function getCovidData(req, res) {
   let url = 'https://api.covid19api.com/country/'
-  
+
   let qString = `${req.query.country}?from=${req.query.startDate}T00:00:00Z&to=${req.query.endDate}T00:00:00Z`
   url = url + qString;
   console.log(url);
@@ -85,23 +92,20 @@ function getCovidData(req, res) {
       let data = new ConfirmedCases(dayData);
       return data;
     });
-    makeChartJson(dateRange, confirmedNumbers);
-    res.render('pages/results', { cases: cases });
+    let json = makeChartJson(dateRange, confirmedNumbers);
+    res.send(json);
+    // res.render('pages/results', { cases: cases });
   }).catch(err =>
     handleError(err, req, res));
 }
 let chartData = [];
 function makeChartJson(labels, data) {
   chartData = [];
-  console.log('saving data to json');
   for (let i = 0; i < labels.length; i++) {
     chartData.push(`${labels[i]}: ${data[i]}`);
   }
-  let chartDataJson = JSON.stringify(chartData);
-  fs.writeFile('/public/chart.json', chartDataJson, function (err) {
-  if (err) return console.log(err);
-  console.log('Hello World > helloworld.txt');
-});
+  return chartData;
+
 }
 
 let confirmedNumbers = [];

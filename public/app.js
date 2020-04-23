@@ -1,8 +1,9 @@
 'use strict';
 console.log('app.js is running');
-
+const query = $('#query').serialize();
 const ajaxSettings = {
   method: 'get',
+  data: query,
   dataType: 'json'
 };
 console.log('about to AJAX', ajaxSettings);

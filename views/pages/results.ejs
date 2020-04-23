@@ -18,11 +18,12 @@
 
 
     <main id="main-content">
-        <h2>Results for <%= cases[0].country %></h2>
-        <% cases.forEach(data => {%>
-        <p>Date <%= data.date %></p>
-        <p>Confirmed Cases <%= data.confirmed %></p>
-        <%})%>
+        <h2>Results for <%= country %></h2>
+       <form action="" id="query">
+           <input type="hidden" name="country" value="<%= country %>">
+           <input type="hidden" name="startDate" value="<%= startDate %>">
+           <input type="hidden" name="endDate" value="<%= endDate %>">
+       </form>
         <canvas id="line-chart" width="800" height="450"></canvas>
     </main>
 
