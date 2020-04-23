@@ -3,7 +3,7 @@
 
 // Load Environment Variables from the .env file
 require('dotenv').config();
-let $ = require('jQuery');
+let $ = require('jquery');
 
 
 // Application Dependencies
