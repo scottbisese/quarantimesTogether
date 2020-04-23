@@ -29,8 +29,22 @@ body {
 #header {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 40% 55% 5%;
+    grid-template-columns: 30% auto 5%;
 }
+
+#forwrapper {
+    display: grid;
+    grid-template-rows: 15% auto 5%;
+}
+
+#submissionwrapper {
+    grid-row: 2 / 3;
+}
+
+#footer {
+    align-self: center;
+}
+
 
 
 
