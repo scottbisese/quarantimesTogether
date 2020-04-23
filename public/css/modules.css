@@ -2,8 +2,8 @@ label {
     margin-top: 20px;
     margin-bottom: 20px;
     display: block;
-    margin-left: 5px;
-    margin-right: 5px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
     font-size: large;
     font-family: cursive;
 }
@@ -25,6 +25,18 @@ body {
     grid-template-rows: 25% auto 5%;
 
 }
+
+#header {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 40% 60%;
+}
+
+#main-content {
+    display: grid;
+
+}
+
 
 
 
