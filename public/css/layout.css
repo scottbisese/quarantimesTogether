@@ -65,6 +65,15 @@ section {
 section p {
     color: black;
 }
+
+label legend form {
+    font-family: 'Sintony', sans-serif;
+    text-shadow: 2px 1px black;
+}
+
+form legend input {
+    color: black;
+}
   
 
 
