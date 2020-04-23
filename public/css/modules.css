@@ -1,6 +1,3 @@
-
-
-
 label {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -21,6 +18,15 @@ input.input-box, textarea {
     font-weight: 400;
     background-color: burlywood;
 }
+
+body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 25% auto 5%;
+
+}
+
+
 
 
 
