@@ -1,3 +1,9 @@
+/* font-family: 'Parisienne', cursive;
+font-family: 'Trochut', cursive;
+font-family: 'Sintony', sans-serif;
+font-family: 'Baloo Tamma 2', cursive;
+font-family: 'Cardo', serif; */
+
 body {
     background-image: url("/images/peacefulSetting.jpeg");
     background-repeat: no-repeat;
@@ -13,7 +19,6 @@ header {
     font-family: 'Parisienne', cursive;
     font-size: 60px;
     font-weight: 600;
-    text-shadow: 2px 2px rgb(238, 215, 7)
 }
 
 header p {
@@ -22,7 +27,15 @@ header p {
     background-color: grey;
     color: black;
     border-radius: 20px;
+    font-family: 'Trochut', cursive;
 }
+
+select, option, button {
+    font-family: 'Baloo Tamma 2', cursive;
+    color: black;
+
+}
+
 
 a:link, a:visited {
     color: white;
@@ -36,6 +49,11 @@ a:link, a:visited {
 a:hover, a:active {
     background-color: rgb(233, 182, 16);
   }
+
+main label {
+    font-family: 'Sintony', sans-serif;
+    text-shadow: 2px 1px black;
+}
   
 
 
