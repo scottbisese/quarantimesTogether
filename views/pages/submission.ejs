@@ -12,11 +12,14 @@
 
     <%- include('../layout/header') %>
 
+    
+    <p><%= quotes.quoteText %>
+    <br/>
+    <%= quotes.quoteAuthor %></p>
+
   </header>
 
   <main id="main-content">
-    <p><%= quotes.quoteText %></p>
-    <p><%= quotes.quoteAuthor %></p>
     <form action="/views/pages/submission" method="POST">
       <legend>
         <label for="name">Share a little about YOU!  

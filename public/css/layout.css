@@ -16,6 +16,14 @@ header {
     text-shadow: 2px 2px rgb(238, 215, 7)
 }
 
+header p {
+    font-size: 25px;
+    border: inset;
+    background-color: grey;
+    color: black;
+    border-radius: 20px;
+}
+
 a:link, a:visited {
     color: white;
     padding: 14px 25px;
