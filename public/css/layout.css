@@ -54,6 +54,17 @@ main label {
     font-family: 'Sintony', sans-serif;
     text-shadow: 2px 1px black;
 }
+
+section {
+    padding-top: 5px;
+    border: 3px double black;
+    background-color: #ededed;
+    border-radius: 25px;
+}
+
+section p {
+    color: black;
+}
   
 
 

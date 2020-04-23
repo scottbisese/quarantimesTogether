@@ -34,7 +34,7 @@ body {
 
 #forwrapper {
     display: grid;
-    grid-template-rows: 15% auto 5%;
+    grid-template-rows: 10% auto 5%;
 }
 
 #submissionwrapper {
