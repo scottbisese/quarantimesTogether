@@ -4,8 +4,8 @@ font-family: 'Sintony', sans-serif;
 font-family: 'Baloo Tamma 2', cursive;
 font-family: 'Cardo', serif; */
 
-body {
-    background-image: url("/images/peacefulSetting.jpeg");
+ body {
+    background-image: url("/images/peacefulSetting3.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: cover;
@@ -13,7 +13,8 @@ body {
     -o-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
-}
+} 
+
 
 header {
     font-family: 'Parisienne', cursive;
@@ -22,18 +23,23 @@ header {
 }
 
 header p {
-    font-size: 20px;
+    font-size: 15px;
     border: inset;
     background-color: #ededed;
     color: black;
     border-radius: 20px;
-    font-family: 'Trochut', cursive;
+    font-family: 'Sintony', sans-serif;
+    
 }
 
 select, option, button {
     font-family: 'Baloo Tamma 2', cursive;
     color: black;
 
+}
+
+canvas {
+    background-color: white;
 }
 
 
@@ -46,9 +52,12 @@ a:link, a:visited {
     font-size: x-large;
 }
 
+
+
 /* a:hover, a:active {
     background-color: rgb(233, 182, 16);
-  } */
+  } *
+
 
 main label {
     font-family: 'Sintony', sans-serif;
@@ -87,7 +96,7 @@ h3 img {
   {
     display: block;
     position: relative;
-    top: 30px;
+    top: 40px;
     left: 50px;
     
     z-index: 1;
