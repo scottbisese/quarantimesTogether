@@ -20,8 +20,11 @@ header {
 main {
     width: 95%;
     overflow: scroll;
+    -ms-overflow-style: none;
 }
-canvas {
-    background-color: white;
+
+main::-webkit-scrollbar {
+    display: none;
 }
+
 

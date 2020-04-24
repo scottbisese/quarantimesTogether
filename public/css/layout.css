@@ -4,8 +4,8 @@ font-family: 'Sintony', sans-serif;
 font-family: 'Baloo Tamma 2', cursive;
 font-family: 'Cardo', serif; */
 
-body {
-    background-image: url("/images/peacefulSetting.jpeg");
+ body {
+    background-image: url("/images/peacefulSetting3.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: cover;
@@ -13,7 +13,8 @@ body {
     -o-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
-}
+} 
+
 
 header {
     font-family: 'Parisienne', cursive;
@@ -27,13 +28,18 @@ header p {
     background-color: #ededed;
     color: black;
     border-radius: 20px;
-    font-family: 'Trochut', cursive;
+    font-family: 'Baloo Tamma 2', cursive;
+    
 }
 
 select, option, button {
     font-family: 'Baloo Tamma 2', cursive;
     color: black;
 
+}
+
+canvas {
+    background-color: white;
 }
 
 
@@ -46,9 +52,9 @@ a:link, a:visited {
     font-size: x-large;
 }
 
-/* a:hover, a:active {
-    background-color: rgb(233, 182, 16);
-  } */
+a:hover, a:active {
+    background-color: none;
+  }
 
 main label {
     font-family: 'Sintony', sans-serif;
@@ -87,7 +93,7 @@ h3 img {
   {
     display: block;
     position: relative;
-    top: 30px;
+    top: 40px;
     left: 50px;
     
     z-index: 1;
@@ -101,7 +107,7 @@ h3 img {
     text-decoration: none;
     color: #232323;
     
-    /* transition: color 0.3s ease; */
+    transition: color 0.3s ease;
   }
   
 #menuToggle a:hover

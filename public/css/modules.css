@@ -2,8 +2,6 @@ label {
     margin-top: 20px;
     margin-bottom: 20px;
     display: block;
-    /* margin-left: 5px;
-    margin-right: 5px; */
     font-size: large;
     font-family: cursive;
 }
@@ -14,7 +12,7 @@ input.input-box, textarea {
 }
 
 #submit {
-    display: block;
+    /* display: block; */
     font-weight: 400;
     background-color: burlywood;
 }
