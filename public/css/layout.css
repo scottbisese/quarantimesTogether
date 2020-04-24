@@ -79,9 +79,38 @@ form legend input {
 }
   
 
-h3 img {
-    border-radius: 50%;
+main h3 {
+  font-family: 'Sintony', sans-serif;
+
 }
+
+#aboutuscontent {
+  display: grid;
+  grid-template-columns: 5% 15% 10% auto;
+
+}
+
+.img1, .img2, .img3, .img4 {
+  grid-column: 2 / 2;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.profile1, .profile2, .profile3, .profile4 {
+  grid-column: 4 / 4;
+
+}
+
+#aboutuscontent h3 {
+  /* border: 3px double black;
+  background-color: #ededed;
+  color: black; */
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+
+
 
 
 
