@@ -12,7 +12,6 @@ input.input-box, textarea {
 }
 
 #submit {
-    /* display: block; */
     font-weight: 400;
     background-color: burlywood;
 }
