@@ -23,12 +23,12 @@ header {
 }
 
 header p {
-    font-size: 20px;
+    font-size: 15px;
     border: inset;
     background-color: #ededed;
     color: black;
     border-radius: 20px;
-    font-family: 'Baloo Tamma 2', cursive;
+    font-family: 'Sintony', sans-serif;
     
 }
 
