@@ -1,6 +1,6 @@
 # Quarantimes Together
 
-Repo for Code 301 project Quarantimes Together collaborators: Yvette Clapp, Scott Bisese, Brennan Roorda, Francesco Troiano.
+Scott Bisese, Yvette Clappe, Brennan Roorda, Francesco Troiano.
 
 Project: Quarantimes together was spawned in the time of quaratine while the international pandemic of COVID-19 was happening. The collaborators felt there should be a site designed for people to share positive news in what were dark times. 
 
@@ -25,6 +25,3 @@ Project: Quarantimes together was spawned in the time of quaratine while the int
 # Database Entity-Relationship-Diagram
 
 [Database Entity-Relationship-Diagram](public/images/DatabaseEntity-Relationship-Diagram.png)
-
-
-
